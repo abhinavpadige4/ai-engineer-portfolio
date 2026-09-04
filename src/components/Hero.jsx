@@ -1,91 +1,96 @@
 import { motion } from 'framer-motion'
-import { AiOutlineGithub, AiOutlineLinkedin, AiOutlineMail } from 'react-icons/ai'
-import { FaXTwitter } from 'react-icons/fa'
-
-const socials = [
-  { icon: AiOutlineGithub, href: 'https://github.com', label: 'GitHub' },
-  { icon: AiOutlineLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-  { icon: FaXTwitter, href: 'https://x.com', label: 'X' },
-  { icon: AiOutlineMail, href: 'mailto:hello@example.com', label: 'Email' },
-]
+import { FiArrowRight, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi'
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-900/40 via-slate-950 to-slate-950" />
-      <div className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-brand-600/20 blur-3xl" />
-      <div className="absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-indigo-600/20 blur-3xl" />
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-24">
+      {/* Background glow effects */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-600/20 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-brand-800/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-500/5 rounded-full blur-3xl" />
+      </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-brand-400 font-medium tracking-widest uppercase text-sm mb-4"
-        >
-          AI Engineer &amp; ML Specialist
-        </motion.p>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
-        >
-          Building Intelligent
-          <span className="block bg-gradient-to-r from-brand-400 to-indigo-400 bg-clip-text text-transparent">
-            Systems with AI
-          </span>
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10"
-        >
-          I design, build, and deploy production-grade machine learning systems,
-          LLM applications, and data pipelines that solve real-world problems.
-        </motion.p>
-
+      <div className="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex flex-wrap items-center justify-center gap-4"
+          transition={{ duration: 0.7 }}
         >
-          <a
-            href="#projects"
-            className="px-8 py-3 rounded-full bg-brand-600 hover:bg-brand-500 text-white font-semibold transition-colors"
-          >
-            View My Work
-          </a>
-          <a
-            href="#contact"
-            className="px-8 py-3 rounded-full border border-slate-700 hover:border-brand-500 hover:text-brand-400 text-slate-300 font-semibold transition-colors"
-          >
-            Get In Touch
-          </a>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-sm text-brand-300 mb-6">
+            <span className="w-2 h-2 rounded-full bg-brand-400 animate-pulse" />
+            Available for new opportunities
+          </div>
+
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6">
+            Building{' '}
+            <span className="gradient-text">Intelligent</span>
+            <br />
+            Systems with AI
+          </h1>
+
+          <p className="text-dark-300 text-lg md:text-xl leading-relaxed mb-8 max-w-lg">
+            I'm Alex Chen, an AI Engineer specializing in large language models,
+            machine learning, and production-grade AI systems. I turn complex
+            problems into elegant, scalable solutions.
+          </p>
+
+          <div className="flex flex-wrap gap-4 mb-10">
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-gradient-to-r from-brand-500 to-brand-700 hover:from-brand-400 hover:to-brand-600 text-white font-semibold transition-all shadow-lg shadow-brand-600/30"
+            >
+              Get in Touch <FiArrowRight />
+            </a>
+            <a
+              href="#features"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg glass hover:bg-white/10 text-dark-100 font-semibold transition-all"
+            >
+              View My Work
+            </a>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <a href="#" className="w-10 h-10 rounded-lg glass flex items-center justify-center text-dark-300 hover:text-brand-400 hover:bg-white/10 transition-all" aria-label="GitHub">
+              <FiGithub className="text-lg" />
+            </a>
+            <a href="#" className="w-10 h-10 rounded-lg glass flex items-center justify-center text-dark-300 hover:text-brand-400 hover:bg-white/10 transition-all" aria-label="LinkedIn">
+              <FiLinkedin className="text-lg" />
+            </a>
+            <a href="#" className="w-10 h-10 rounded-lg glass flex items-center justify-center text-dark-300 hover:text-brand-400 hover:bg-white/10 transition-all" aria-label="Email">
+              <FiMail className="text-lg" />
+            </a>
+          </div>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="flex items-center justify-center gap-6 mt-12"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="relative hidden md:block"
         >
-          {socials.map(({ icon: Icon, href, label }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={label}
-              className="text-slate-400 hover:text-brand-400 transition-colors text-2xl"
-            >
-              <Icon />
-            </a>
-          ))}
+          <div className="relative w-full max-w-md mx-auto">
+            <div className="absolute inset-0 bg-gradient-to-br from-brand-500/30 to-brand-800/30 rounded-3xl blur-2xl" />
+            <div className="relative glass rounded-3xl p-6 font-mono text-sm">
+              <div className="flex items-center gap-2 mb-4">
+                <span className="w-3 h-3 rounded-full bg-red-500" />
+                <span className="w-3 h-3 rounded-full bg-yellow-500" />
+                <span className="w-3 h-3 rounded-full bg-green-500" />
+                <span className="ml-2 text-dark-400 text-xs">ai_engineer.py</span>
+              </div>
+              <pre className="text-dark-200 leading-relaxed">
+                <code>
+                  <span className="text-brand-400">class</span> <span className="text-yellow-300">AIEngineer</span>:{'\n'}
+                  {'  '}<span className="text-brand-400">def</span> <span className="text-blue-300">__init__</span>(self):{'\n'}
+                  {'    '}self.skills = [<span className="text-green-300">'LLMs'</span>,{'\n'}
+                  {'      '}<span className="text-green-300">'ML'</span>, <span className="text-green-300">'NLP'</span>,{'\n'}
+                  {'      '}<span className="text-green-300">'MLOps'</span>]{'\n'}
+                  {'  '}<span className="text-brand-400">def</span> <span className="text-blue-300">build</span>(self):{'\n'}
+                  {'    '}<span className="text-brand-400">return</span> <span className="text-green-300">'scalable AI'</span>{'\n'}
+                </code>
+              </pre>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
