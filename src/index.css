@@ -2,28 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-  body {
-    @apply bg-dark-950 text-dark-100 font-sans antialiased;
-  }
-  ::selection {
-    @apply bg-brand-600 text-white;
-  }
+:root {
+  color-scheme: dark;
 }
 
-@layer components {
-  .gradient-text {
-    @apply bg-gradient-to-r from-brand-400 via-brand-500 to-brand-600 bg-clip-text text-transparent;
-  }
-  .glass {
-    @apply bg-white/5 backdrop-blur-md border border-white/10;
-  }
-  .section-padding {
-    @apply py-20 md:py-28;
-  }
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #0a0a0f;
+  color: #e5e7eb;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: rgba(139, 92, 246, 0.4);
+  color: #fff;
 }
 
 /* Custom scrollbar */
@@ -31,12 +28,23 @@
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #020617;
+  background: #0a0a0f;
 }
 ::-webkit-scrollbar-thumb {
-  background: #4c1d95;
+  background: #2d2d3d;
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #6d28d9;
+  background: #8b5cf6;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #c4b5fd 0%, #8b5cf6 50%, #6d28d9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glow {
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.35);
 }
