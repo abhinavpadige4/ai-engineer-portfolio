@@ -1,21 +1,25 @@
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Features from './components/Features'
-import Architecture from './components/Architecture'
-import TechStack from './components/TechStack'
-import Footer from './components/Footer'
+import Navbar from './components/Navbar.jsx'
+import Hero from './components/Hero.jsx'
+import Features from './components/Features.jsx'
+import Architecture from './components/Architecture.jsx'
+import Skills from './components/Skills.jsx'
+import Projects from './components/Projects.jsx'
+import Contact from './components/Contact.jsx'
+import Footer from './components/Footer.jsx'
 
-export default function App() {
+function App() {
   return (
-    <div className="min-h-screen bg-dark-950 text-dark-100">
+    <>
       <Navbar />
-      <main>
-        <Hero />
-        <Features />
-        <Architecture />
-        <TechStack />
-      </main>
+      <Hero />
+      <Features />
+      <Architecture />
+      <Skills />
+      <Projects />
+      <Contact />
       <Footer />
-    </div>
+    </>
   )
 }
+
+export default App
