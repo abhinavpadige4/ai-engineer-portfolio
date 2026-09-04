@@ -1,21 +1,21 @@
-import Hero from './components/Hero.jsx'
-import About from './components/About.jsx'
-import Skills from './components/Skills.jsx'
-import Projects from './components/Projects.jsx'
-import Contact from './components/Contact.jsx'
-import Footer from './components/Footer.jsx'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Features from './components/Features'
+import Architecture from './components/Architecture'
+import TechStack from './components/TechStack'
+import Footer from './components/Footer'
 
-function App() {
+export default function App() {
   return (
-    <>
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
+    <div className="min-h-screen bg-dark-950 text-dark-100">
+      <Navbar />
+      <main>
+        <Hero />
+        <Features />
+        <Architecture />
+        <TechStack />
+      </main>
       <Footer />
-    </>
+    </div>
   )
 }
-
-export default App
