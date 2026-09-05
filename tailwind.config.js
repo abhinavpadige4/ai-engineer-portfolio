@@ -7,17 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        brand: {
-          50: '#eef2ff',
-          100: '#e0e7ff',
-          200: '#c7d2fe',
-          300: '#a5b4fc',
-          400: '#818cf8',
-          500: '#6366f1',
-          600: '#4f46e5',
-          700: '#4338ca',
-          800: '#3730a3',
-          900: '#312e81',
+        dark: {
+          900: '#0a0a0f',
+          800: '#111118',
+          700: '#1a1a24',
+          600: '#23232f',
         },
         accent: {
           300: '#c4b5fd',
@@ -26,26 +20,13 @@ export default {
           600: '#7c3aed',
           700: '#6d28d9',
         },
-        dark: {
-          50: '#f8fafc',
-          100: '#e2e8f0',
-          200: '#cbd5e1',
-          300: '#94a3b8',
-          400: '#64748b',
-          500: '#475569',
-          600: '#232333',
-          700: '#1a1a26',
-          800: '#12121a',
-          900: '#0a0a0f',
-          950: '#050508',
-        },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
       },
       animation: {
-        float: 'float 6s ease-in-out infinite',
+        'float': 'float 6s ease-in-out infinite',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       keyframes: {
